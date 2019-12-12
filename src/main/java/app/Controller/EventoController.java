@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -84,7 +83,7 @@ public class EventoController {
 	@PutMapping
 	@RequestMapping("/editarEvento/{id}")
 	public String editarEvento() {
-	
+		//TODO implementar
 		return "Editar evento";
 	}
 	
@@ -104,7 +103,7 @@ public class EventoController {
 	@DeleteMapping
 	@RequestMapping("/deletarEvento/{id}")
 	public String deletarEvento() {
-		
+		//TODO implementar
 		return "Evento excluido";
 	}
 	

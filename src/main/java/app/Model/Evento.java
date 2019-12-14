@@ -1,5 +1,6 @@
 package app.Model;
 
+import java.io.Serializable;
 import java.util.*;
 
 import javax.persistence.CascadeType;
@@ -16,7 +17,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "Evento")
-public class Evento {
+public class Evento implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -31,6 +35,17 @@ public class Evento {
 	referencedColumnName = "id"))
 	@JsonIgnoreProperties("eventos")
 	private Set<Pessoa> pessoas;
+	
+	public Evento() {}
+	
+	public Evento(String nome, String local, String data,
+			String horario, Set<Pessoa> pessoas) {
+		this.nome = nome;
+		this.local = local;
+		this.data = data;
+		this.horario = horario;
+		this.pessoas = pessoas;		
+	}
 
 	public int getId() {
 		return id;
